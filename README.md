@@ -375,52 +375,52 @@ python -m lunar_registration.cli benchmark
 
 ## Development Roadmap
 
-### Phase 1 — Baseline
+### Phase 1 — Baseline ✅
 
-- [ ] Dataset ingestion
-- [ ] Image preprocessing
-- [ ] SIFT implementation
-- [ ] Descriptor matching
-- [ ] Ratio test
-- [ ] RANSAC
-- [ ] Homography estimation
-- [ ] Image registration
-- [ ] Match visualization
-- [ ] RMSE calculation
-- [ ] Inlier statistics
+- [x] Dataset ingestion
+- [x] Image preprocessing
+- [x] SIFT implementation
+- [x] Descriptor matching
+- [x] Ratio test
+- [x] RANSAC
+- [x] Homography estimation
+- [x] Image registration
+- [x] Match visualization
+- [x] RMSE calculation
+- [x] Inlier statistics
 
-### Phase 2 — Robustness
+### Phase 2 — Robustness ✅
 
-- [ ] Illumination normalization
-- [ ] Sun-angle robustness experiments
-- [ ] Scale robustness experiments
-- [ ] Viewpoint robustness experiments
-- [ ] Spatially distributed matching
-- [ ] Improved outlier rejection
+- [x] Illumination normalization (DoG, Retinex, MSR, Homomorphic, Shadow removal)
+- [x] Sun-angle robustness experiments (benchmark suite)
+- [x] Scale robustness experiments (benchmark suite)
+- [ ] Viewpoint robustness experiments (requires real data)
+- [x] Spatially distributed matching (grid-based selection)
+- [x] Improved outlier rejection (MAGSAC++, LO-RANSAC, symmetric matching)
 
-### Phase 3 — Learned Correspondence
+### Phase 3 — Learned Correspondence ✅
 
-- [ ] SuperPoint
-- [ ] Learned descriptor matching
-- [ ] LoFTR
-- [ ] Cross-sensor experiments
-- [ ] Comparative benchmark
+- [x] SuperPoint (via Kornia)
+- [x] Learned descriptor matching
+- [x] LoFTR (via Kornia)
+- [ ] Cross-sensor experiments (requires real data)
+- [x] Comparative benchmark (automated suite)
 
-### Phase 4 — High-Precision Registration
+### Phase 4 — High-Precision Registration ✅
 
-- [ ] Sub-pixel refinement
-- [ ] Local optimization
-- [ ] Improved geometric models
-- [ ] Accuracy analysis
+- [x] Sub-pixel refinement (template matching, phase correlation)
+- [x] Local optimization (IRLS)
+- [x] Improved geometric models (similarity, affine, homography)
+- [x] Accuracy analysis (per-match reprojection errors, region counts)
 
-### Phase 5 — Final System
+### Phase 5 — Final System ✅
 
-- [ ] End-to-end pipeline
-- [ ] Automated benchmarking
-- [ ] Result visualization
-- [ ] Reproducible experiments
-- [ ] Documentation
-- [ ] Software demonstration
+- [x] End-to-end pipeline (config-driven main.py)
+- [x] Automated benchmarking (benchmark suite with comparison tables)
+- [x] Result visualization (side-by-side, overlay, checkerboard, heatmaps)
+- [x] Reproducible experiments (YAML configs + CLI)
+- [x] Documentation (methodology, dataset, experiments)
+- [ ] Software demonstration (requires real data)
 
 ---
 

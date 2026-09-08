@@ -1,0 +1,31 @@
+# ============================================================
+# SelenoFuse — SIFT Configuration
+# ============================================================
+# Optimized for SIFT-based matching on lunar imagery.
+# Inherits from default.yaml; only overrides are specified.
+
+features:
+  detector: "sift"
+  n_features: 8000
+  sift:
+    contrast_threshold: 0.03
+    edge_threshold: 10
+    sigma: 1.6
+
+matching:
+  method: "bruteforce"
+  ratio_threshold: 0.7
+  cross_check: false
+  spatial_distribution:
+    enabled: true
+    grid_size: [8, 8]
+    max_per_cell: 10
+
+geometry:
+  method: "lo_ransac"
+  reproj_threshold: 4.0
+  max_iterations: 3000
+  confidence: 0.999
+  refinement:
+    enabled: true
+    method: "template"

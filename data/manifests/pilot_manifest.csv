@@ -1,0 +1,6 @@
+image_id,sensor,product_type,resolution_m,sun_elevation_deg,phase_angle_deg,center_lat,center_lon,file_path,notes
+CH2_OHRC_001,OHRC,L2,0.25,45.0,30.0,-12.5,23.8,data/external/ch2/pilot/ch2_ohrc_001.tif,Pilot scene 1
+CH2_TMC2_001,TMC2,L2,5.0,45.0,30.0,-12.5,23.8,data/external/ch2/pilot/ch2_tmc2_001.tif,Co-registered TMC-2
+LRO_NAC_001,NAC,CDR,0.5,55.0,40.0,-12.5,23.8,data/external/lro/pilot/lro_nac_001.tif,LRO reference
+CH2_OHRC_002,OHRC,L2,0.25,15.0,70.0,-12.5,23.8,data/external/ch2/pilot/ch2_ohrc_002.tif,Low sun elevation
+LRO_NAC_002,NAC,CDR,0.5,70.0,20.0,-12.5,23.8,data/external/lro/pilot/lro_nac_002.tif,High sun elevation ref

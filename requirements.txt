@@ -4,4 +4,14 @@ Pillow
 matplotlib
 PyYAML
 pytest
+scipy
+scikit-image
+pandas
+tqdm
+rich
 
+# Phase 3: Learned features (optional, ~2GB)
+# Uncomment to enable SuperPoint and LoFTR:
+# torch
+# torchvision
+# kornia>=0.7.0

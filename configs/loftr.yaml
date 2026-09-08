@@ -1,0 +1,35 @@
+# ============================================================
+# SelenoFuse — LoFTR Configuration
+# ============================================================
+# Configuration for LoFTR dense matching (detector-free).
+# Requires torch and kornia.
+
+features:
+  detector: "loftr"
+  loftr:
+    pretrained: "outdoor"
+    confidence_threshold: 0.5
+    max_image_size: 840
+    device: "cpu"
+
+# LoFTR handles matching internally, these are fallback settings
+matching:
+  method: "bruteforce"
+  ratio_threshold: 0.8
+
+preprocessing:
+  illumination:
+    enabled: true
+    method: "dog"
+  normalization:
+    enabled: true
+    method: "percentile"
+
+geometry:
+  method: "magsac"
+  reproj_threshold: 3.0
+  max_iterations: 2000
+  confidence: 0.999
+  refinement:
+    enabled: true
+    method: "all"

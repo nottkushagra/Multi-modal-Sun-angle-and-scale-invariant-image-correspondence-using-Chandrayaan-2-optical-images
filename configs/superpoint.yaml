@@ -1,0 +1,36 @@
+# ============================================================
+# SelenoFuse — SuperPoint Configuration
+# ============================================================
+# Configuration for SuperPoint CNN-based features.
+# Requires torch and kornia.
+
+features:
+  detector: "superpoint"
+  n_features: 2048
+  superpoint:
+    detection_threshold: 0.015
+    nms_radius: 4
+    device: "cpu"
+
+matching:
+  method: "bruteforce"
+  ratio_threshold: 0.8
+  cross_check: false
+  spatial_distribution:
+    enabled: true
+    grid_size: [8, 8]
+    max_per_cell: 8
+
+preprocessing:
+  illumination:
+    enabled: true
+    method: "retinex"
+
+geometry:
+  method: "magsac"
+  reproj_threshold: 4.0
+  max_iterations: 2000
+  confidence: 0.999
+  refinement:
+    enabled: true
+    method: "phase"

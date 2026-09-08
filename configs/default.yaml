@@ -1,0 +1,95 @@
+# ============================================================
+# SelenoFuse — Default Configuration
+# ============================================================
+# Full pipeline configuration with all parameters.
+# Override specific sections via method-specific YAML files.
+
+# Preprocessing
+preprocessing:
+  grayscale: true
+  clahe:
+    enabled: true
+    clip_limit: 2.0
+    tile_grid_size: [8, 8]
+  illumination:
+    enabled: false
+    method: "retinex"        # dog, shadow_removal, homomorphic, retinex, msr
+    params: {}
+  enhancement:
+    denoise: "bilateral"     # bilateral, nlm, none
+    enhance_contrast: true
+    sharpen: false
+  normalization:
+    enabled: false
+    method: "percentile"     # zero_mean, min_max, percentile, gamma
+    params:
+      low_pct: 2.0
+      high_pct: 98.0
+
+# Feature Detection
+features:
+  detector: "sift"           # sift, orb, superpoint
+  n_features: 5000
+  sift:
+    contrast_threshold: 0.04
+    edge_threshold: 10
+    sigma: 1.6
+  orb:
+    scale_factor: 1.2
+    n_levels: 8
+    edge_threshold: 31
+    patch_size: 31
+  superpoint:
+    detection_threshold: 0.015
+    nms_radius: 4
+    device: "cpu"
+
+# Matching
+matching:
+  method: "bruteforce"       # bruteforce, flann, symmetric
+  ratio_threshold: 0.75
+  cross_check: false
+  spatial_distribution:
+    enabled: false
+    grid_size: [8, 8]
+    max_per_cell: 5
+
+# Geometry
+geometry:
+  method: "ransac"           # ransac, magsac, lo_ransac, usac
+  reproj_threshold: 5.0
+  max_iterations: 2000
+  confidence: 0.999
+  refinement:
+    enabled: false
+    method: "template"       # template, irls, phase, all
+    params: {}
+
+# Registration
+registration:
+  warp_method: "homography"  # homography, affine, similarity
+  interpolation: "linear"    # linear, cubic, nearest
+
+# Evaluation
+evaluation:
+  metrics:
+    - rmse
+    - inlier_ratio
+    - spatial_coverage
+    - processing_time
+  spatial_coverage_grid: [8, 8]
+  region_grid: [4, 4]
+
+# Output
+output:
+  directory: "outputs"
+  save_matches: true
+  save_registered: true
+  save_metrics: true
+  save_visualization: true
+
+# Logging
+logging:
+  level: "INFO"              # DEBUG, INFO, WARNING, ERROR
+  file: null                 # null = stdout only
+  format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
